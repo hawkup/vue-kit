@@ -1,10 +1,11 @@
 <script lang="ts" setup>
+import Head from './Head.vue'
 import Count from './Count.vue'
-import '../tailwind.css'
 </script>
 
 <template>
   <Story>
+    <Head />
     <Count />
   </Story>
 </template>
