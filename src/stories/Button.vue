@@ -3,6 +3,7 @@
 </template>
 
 <script lang="ts" setup>
+import './button.css';
 import { computed } from 'vue';
 
 const props = withDefaults(defineProps<{
@@ -30,7 +31,7 @@ const emit = defineEmits<{
 }>();
 
 const classes = computed(() => ({
-  'storybook-button c-yellow': true,
+  'storybook-button': true,
   'storybook-button--primary': props.primary,
   'storybook-button--secondary': !props.primary,
   [`storybook-button--${props.size || 'medium'}`]: true,
