@@ -2,10 +2,19 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 import Button from './Button.vue';
 
+import tailwindcss from '@/tailwind.css?inline'
+
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 const meta = {
-  title: 'Button',
+  title: 'Components/Button/Polaris/Tailwind',
   component: Button,
+  decorators: [
+    () => (
+      {
+        template: `<div><component :is="\'style\'">${tailwindcss.toString()}</component><story/></div>`
+      }
+    ),
+  ],
   // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
   tags: ['autodocs'],
   argTypes: {

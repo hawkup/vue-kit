@@ -1,5 +1,5 @@
 import type { StorybookConfig } from "@storybook/vue3-vite";
-import Unocss from "unocss/vite";
+// import Unocss from "unocss/vite";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -15,11 +15,11 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
-  viteFinal(config){
-    config.plugins?.push(Unocss({
-      mode: 'vue-scoped'
-    }))
-    return config
-  }
+  // viteFinal(config){
+  //   config.plugins?.push(Unocss({
+  //     mode: 'vue-scoped'
+  //   }))
+  //   return config
+  // }
 };
 export default config;
