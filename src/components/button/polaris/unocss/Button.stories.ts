@@ -10,7 +10,7 @@ const meta = {
   decorators: [
     () => (
       {
-        template: '<story/>',
+        template: '<div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"><story/></div>',
         setup() {
           useScriptTag('https://cdn.jsdelivr.net/npm/@unocss/runtime')
         }
