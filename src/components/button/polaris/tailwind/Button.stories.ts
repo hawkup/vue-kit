@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 import Button from './Button.vue';
 
-import tailwindcss from '@/tailwind.css?inline'
+import tailwindcss from '@/styles/tailwind/polaris.css?inline'
 
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 const meta = {
@@ -18,11 +18,10 @@ const meta = {
   // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', options: ['small', 'medium', 'large'] },
-    backgroundColor: { control: 'color' },
+    intent: { control: 'select', options: ['primary', 'secondary', 'destructive'] },
+    size: { control: 'select', options: ['slim', 'medium', 'large'] },
     onClick: { action: 'clicked' },
   },
-  args: { primary: false }, // default value
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -34,28 +33,21 @@ type Story = StoryObj<typeof meta>;
  */
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    label: 'Primary Button',
+    intent: 'primary'
   },
 };
 
 export const Secondary: Story = {
   args: {
-    primary: false,
-    label: 'Button',
+    label: 'Secondary Button',
+    intent: 'secondary'
   },
 };
 
-export const Large: Story = {
+export const Destructive: Story = {
   args: {
-    label: 'Button',
-    size: 'large',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    label: 'Button',
-    size: 'small',
+    label: 'Destructive Button',
+    intent: 'destructive'
   },
 };
